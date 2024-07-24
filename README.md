@@ -26,7 +26,6 @@ The associated maps are available in `maps/`. These are from the official Virpil
 - Digital Combat Simulator (DCS): config needs to be exported from the game, one export per device
 - Star Citizen: config available in `GamePath:\Roberts Space Industries\StarCitizen\LIVE\USER\Client\0\Controls\Mappings`
 
-
 ## Usage
 ```bash
 VPCMappingVisualization.py -h
@@ -42,3 +41,16 @@ options:
   --game {SC,DCS}       Map SC or DCS type of input
   --joyID JOYID         Joystick ID you want to map. At the first execution, the tool will tell you what is available
 ```
+
+## Add a new device
+When you run the script with the vpcdevice called "new" you'll have the image you have in layout that will be opened.
+
+You need to manually click for each virtual button your device has, at the correct location on the map. Each click will be the upper left coordinate of a box that is 110x40 pixels. The text will fit into that box.
+You need to copy these coordinates into deviceList.py, like:
+```
+availableDevices = {'DEVICENAME': {
+  '1': [x, y],
+  '2': [x, y],
+(...)
+```
+The number is the number of the button as used in games, which is the logical button number (which can be equal to the hardware number, but not always). For the axis, you need to use the name of the axis, as used in game. It's usually `X, Y, Z, RX, RY, RZ, SLIDER1`. If you're usure about the button number or axis name, use JoystickTester. Do not use the VPC Configuration Tool, it's really confusing.

@@ -256,7 +256,10 @@ class vpc(object):
         self.buttons = {}
 
         # Update the button list based on the args
-        self.createButtonList()
-        self.updateButtonList()
-        # And display the figure
-        self.updatePositionsAutoFit()
+        if self.game == "new":
+            extractPositionsFromKeymap(self)
+        else:
+            self.createButtonList()
+            self.updateButtonList()
+            # And display the figure
+            self.updatePositionsAutoFit()
