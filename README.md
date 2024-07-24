@@ -18,7 +18,7 @@ Currently the available maps are for the devices:
 ### Throttles
 | Device                      |
 |-----------------------------|
-| ~~VPC MongoosT-50CM3 Throttle~~ |
+| VPC MongoosT-50CM3 Throttle |
 
 The associated maps are available in `maps/`. These are from the official Virpil website. Any map will work, as long as you provide the corresponding position dictionnary (`VPCMappingVisualization/devicesList.py`).
 
