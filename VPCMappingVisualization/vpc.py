@@ -235,6 +235,7 @@ class vpc(object):
         # open image
         image = cv2.imread(self.img)
         fig, ax = plt.subplots(1, figsize=(10,10)) 
+        ax.set_axis_off()
         ax.imshow(image)
         for button in self.buttons:
             pos = self.buttons[button]['pos']
